@@ -1,0 +1,101 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+[contentEditable] {
+    outline: 0px solid transparent;
+}
+
+  [contentEditable][placeholder]:empty:before {
+    content: attr(placeholder);
+    position: absolute;
+    color: gray;
+    background-color: transparent;
+  }
+
+.container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 6fr;
+    /* grid-template-areas: "a b b b"
+                         "c d d d"
+                         "e f f f"; */
+    width: 60%;
+    /* justify-content: start; */
+}
+
+.container h1 {
+    min-height: 40px;
+    margin: 0px;
+    padding: 10px 0px;
+}
+
+.container p, div {
+    min-height: 20px;
+    margin: 0px;
+    padding: 10px 0px;
+}
+
+.formInput {
+    background-color: ghostwhite;
+    max-width: 500px;
+    cursor: text;
+}
+
+/* #formTitle{
+    grid-area: b;
+}
+
+#formAuthor {
+    grid-area: d;
+}
+
+#formContent {
+    grid-area: f;
+} */
+
+.show {
+    visibility: hidden;
+    width: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border-right: 1px solid grey;
+}
+
+#showIcons {
+    align-items: center;
+    border-right: 0px transparent;
+}
+
+.show img {
+    height:20px;
+    width: 20px;
+}
+/* #showTitle {
+    grid-area: a;
+}
+
+#showAuthor {
+    grid-area: c;
+}
+
+#showIcon {
+    grid-area: e;
+} */
+
+.publishButton {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 15px;
+    position: fixed;
+    height: 30px;
+    width: 100px;
+    right: 20%;
+    top: 4%;
+    cursor: pointer;
+}
+

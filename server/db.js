@@ -2,7 +2,7 @@ const {MongoClient} = require("mongodb");
 
 
 async function main() {
-    const uri = "mongodb+srv://AndJ:password0015@telegraph.mzinr02.mongodb.net/?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://josh1507:password0015@telegraph.6ipsoor.mongodb.net/?retryWrites=true&w=majority";
 
     const client = new MongoClient(uri);
 
@@ -31,7 +31,7 @@ async function main() {
 main().catch(console.error);
 
 async function create(client, newData) {
-    const result = await client.db("sample_airbnb").collection("listingAndReviews").insertOne(newData);
+    const result = await client.db("sample_weatherdata").collection("data").insertOne(newData);
     
     console.log(`new listing has id of ${result.insertedId}`);
 }

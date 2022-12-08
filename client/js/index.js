@@ -16,11 +16,12 @@ formContent.addEventListener("click", showHiddenIcons);
 document.addEventListener("click", hideIcons);
 
 async function postData(){
+    const date = new Date();
     const newData = {
         title: formTitle.textContent,
         author: formAuthor.textContent,
         body: formContent.textContent,
-        time: Date.now()
+        time: date.toDateString()
     };
 
     console.log(JSON.stringify(newData));

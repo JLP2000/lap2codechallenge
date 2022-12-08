@@ -38,14 +38,16 @@ module.exports = class Post{
     static create(postData){
         return new Promise(async (resolve, reject) =>{
             try{
+                // console.log(postData);
                 await client.connect();
-                const {title, author, body} = postData
-                const dataInput = new Post(title, author, body)
-
+                // const {title, author, body} = postData
+                // console.log(postData.title)
+                const dataInput = new Post(postData)
+                // console.log(dataInput)
                 const result = await client.db("telegraph-db").collection("posts").insertOne(dataInput)
-                const newPost = new Post(result);
-                console.log(newPost)
-                resolve(newPost);
+                // const newPost = new Post(result);
+                console.log(result)
+                resolve(dataInput);
             } catch(err){
                 reject("Post could not be created")
             }

@@ -6,10 +6,40 @@ const icons = document.getElementById("showIcons");
 const showTitle = document.getElementById("showTitle");
 const showAuthor = document.getElementById("showAuthor");
 
+const publishButton = document.getElementById("publishButton");
+
+publishButton.addEventListener("click", postData);
 formTitle.addEventListener("keyup", showHidden);
 formAuthor.addEventListener("keyup", showHidden);
 formContent.addEventListener("click", showHiddenIcons);
+
 document.addEventListener("click", hideIcons);
+
+async function postData(){
+    const newData = {
+        title: formTitle.textContent,
+        author: formAuthor.textContent,
+        body: formContent.textContent
+    };
+
+    console.log(JSON.stringify(newData));
+
+    const options = {
+        method: "POST",
+        body: JSON.stringify(newData),
+        headers: { "Content-Type": "application/json" },
+    };
+
+    const response = await fetch('http://localhost:3000/posts', options)
+    .then(r => r.json())
+    .then(data =>{
+        // data.title = newData.title;
+        // data.author = newData.author;
+        // data.body = newData.body;
+        window.location.hash = `${data.title}`;
+    })
+
+}
 
 function showHidden(){
 
@@ -38,3 +68,4 @@ function hideIcons(e){
         showTitle.style.visibility = "visible";
     }
 }
+

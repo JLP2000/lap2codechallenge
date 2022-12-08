@@ -5,7 +5,8 @@ const client = new MongoClient(uri);
 const testData = {
     title: "Trees are cool",
     author: "Treeman",
-    body: "I like trees, don't cut them down!"
+    body: "I like trees, don't cut them down!",
+    time: "December 08, 2022"
 }
 
 module.exports = class Post{
@@ -13,6 +14,7 @@ module.exports = class Post{
         this.title = data.title;
         this.author = data.author;
         this.body = data.body;
+        this.time = data.time
     }
 
     static findByTitle(title){

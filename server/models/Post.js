@@ -39,8 +39,8 @@ module.exports = class Post{
         return new Promise(async (resolve, reject) =>{
             try{
                 await client.connect();
-                const {title, pseudonym, body} = postData
-                const dataInput = new Post(title, pseudonym, body)
+                const {title, author, body} = postData
+                const dataInput = new Post(title, author, body)
 
                 const result = await client.db("telegraph-db").collection("posts").insertOne(dataInput)
                 const newPost = new Post(result);

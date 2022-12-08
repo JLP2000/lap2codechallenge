@@ -41,10 +41,10 @@ function updateMain(hash){
 
         main.innerHTML = "";
         main.innerHTML = `
-        <div>
+        <div class="postContainer">
             <h1 id="postTitle">${postData.title}</h1>
-            <p id="authorAndTime">${postData.author}</p>
-            <p id="postContent">${postData.body}</p>
+            <p id="authorAndTime">${postData.author} &#x2022; ${postData.time}</p>
+            <p id="postContent">${postData.body} </p>
         </div>
         <button class="publishButton">EDIT</button>`
     }

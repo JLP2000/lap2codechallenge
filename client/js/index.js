@@ -19,7 +19,8 @@ async function postData(){
     const newData = {
         title: formTitle.textContent,
         author: formAuthor.textContent,
-        body: formContent.textContent
+        body: formContent.textContent,
+        time: new Date.now()
     };
 
     console.log(JSON.stringify(newData));

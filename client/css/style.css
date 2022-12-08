@@ -25,13 +25,18 @@ main {
     /* justify-content: start; */
 }
 
-.container h1 {
+.postContainer {
+    width: 60%;
+    
+}
+
+.container h1, .postContainer h1 {
     min-height: 40px;
     margin: 0px;
     padding: 10px 0px;
 }
 
-.container p, div {
+.container p, div, .postContainer h1 {
     min-height: 20px;
     margin: 0px;
     padding: 10px 0px;
